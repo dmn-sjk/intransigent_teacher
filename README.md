@@ -1,4 +1,4 @@
-# Intransigent teachers guide better test-time adaptation students
+# Rethinking Teacher-Student Framework for Test-Time Adaptation
 This code is based on an open source online test-time adaptation repository [(link)](https://github.com/mariodoebler/test-time-adaptation). 
 
 ## Prerequisites
