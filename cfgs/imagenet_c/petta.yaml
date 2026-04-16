@@ -1,0 +1,45 @@
+CORRUPTION:
+  DATASET: imagenet_c
+  SEVERITY:
+    - 5
+  TYPE:
+    - gaussian_noise
+    - shot_noise
+    - impulse_noise
+    - defocus_blur
+    - glass_blur
+    - motion_blur
+    - zoom_blur
+    - snow
+    - frost
+    - fog
+    - brightness
+    - contrast
+    - elastic_transform
+    - pixelate
+    - jpeg_compression
+MODEL:
+  ADAPTATION: petta
+  ARCH: resnet50
+OPTIM:
+  BETA: 0.9
+  LR: 1e-3
+  METHOD: Adam
+  STEPS: 1
+  WD: 0.0
+TEST:
+  BATCH_SIZE: 64
+ROTTA:
+  MEMORY_SIZE: 64
+  UPDATE_FREQUENCY: 64
+PETTA:
+  ALPHA_0: 0.001
+  LAMBDA_0: 10.0
+  AL_WGT: 1.0
+  REGULARIZER: cosine
+  ADAPTIVE_LAMBDA: True
+  ADAPTIVE_ALPHA: True
+  NORM_LAYER: rbn
+  LOSS_FUNC: ce
+  PERCENTAGE: 1.0
+  NUM_WORKERS: 4

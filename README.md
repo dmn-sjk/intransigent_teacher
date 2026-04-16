@@ -32,7 +32,7 @@ This will create the files `[model_name]_cov.pt` and `[model_name]_swa.pt` insid
 
 Config files for all experiments and methods are provided. To conduct a single experiment, simply run the following Python file with the corresponding config file.
 ```bash
-python test_time.py --cfg cfgs/[ccc/cifar10_c/imagenet_c/imagenet_others/domainnet126]/[source/tent/eata/rdumb/sar/cotta/rotta/adacontrast/petal/memo/norm_test/losstest].yaml
+python test_time.py --cfg cfgs/[ccc/cifar10_c/imagenet_c/imagenet_others/domainnet126]/[source/tent/eata/rdumb/sar/petta/cotta/rotta/adacontrast/petal/memo/norm_test/losstest].yaml
 ```
 
 To run AdaContrast, CoTTA, RoTTA or PETAL experiments with an `intransigent teacher` set the `M_TEACHER.FROZ` argument to True:
@@ -42,7 +42,7 @@ python test_time.py --cfg cfgs/[ccc/cifar10_c/imagenet_c/imagenet_others/domainn
 
 For imagenet_others, the argument CORRUPTION.DATASET has to be passed:
 ```bash
-python test_time.py --cfg cfgs/imagenet_others/[source/tent/eata/rdumb/sar/cotta/rotta/adacontrast/petal/memo/norm_test/losstest].yaml CORRUPTION.DATASET imagenet_r
+python test_time.py --cfg cfgs/imagenet_others/[source/tent/eata/rdumb/sar/petta/cotta/rotta/adacontrast/petal/memo/norm_test/losstest].yaml CORRUPTION.DATASET imagenet_r
 ```
 
 E.g., to run SAR for the ImageNet-to-ImageNet-R benchmark, run the following command.

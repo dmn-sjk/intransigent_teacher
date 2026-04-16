@@ -59,6 +59,11 @@ configs = {
         'TEST.NUM_LOOPS': [20],
         'TEST.BATCH_SIZE': [10], 
     },
+    'petta': {
+        'RUN_NAME': RUN_NAME,
+        'TEST.NUM_LOOPS': [20],
+        'TEST.BATCH_SIZE': [10], 
+    },
     'adacontrast': {
         'RUN_NAME': RUN_NAME,
         'M_TEACHER.FROZ': [True, False],

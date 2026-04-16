@@ -224,6 +224,18 @@ _C.PETAL.RST = 1.0
 _C.PETAL.SPW = 1e-9
 _C.PETAL.AP = 0.92
 
+_C.PETTA = CfgNode()
+_C.PETTA.ALPHA_0 = 0.001
+_C.PETTA.LAMBDA_0 = 0.0
+_C.PETTA.AL_WGT = 1.0
+_C.PETTA.REGULARIZER = "cosine"
+_C.PETTA.ADAPTIVE_LAMBDA = False
+_C.PETTA.ADAPTIVE_ALPHA = False
+_C.PETTA.NORM_LAYER = "rbn"
+_C.PETTA.LOSS_FUNC = "sce"
+_C.PETTA.PERCENTAGE = 1.0
+_C.PETTA.NUM_WORKERS = 4
+
 # ------------------------------- Source options ---------------------------- #
 _C.SOURCE = CfgNode()
 

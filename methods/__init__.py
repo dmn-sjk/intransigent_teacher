@@ -9,9 +9,10 @@ from methods.sar import SAR
 from methods.losstest import LossTest
 from methods.memo import MEMO
 from methods.petal import PETAL
+from methods.petta import PeTTA
 
 __all__ = [
     'Source', 'BNTest', 'BNAlpha', 'BNEMA', 'MEMO',
     'CoTTA', 'RoTTA', 'AdaContrast', 'Tent', 'EATA', 'SAR', 'LossTest', 
-    'PETAL'
+    'PETAL', 'PeTTA'
 ]

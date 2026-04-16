@@ -1,0 +1,34 @@
+CORRUPTION:
+  DATASET: domainnet126
+  SEVERITY:
+    - 5
+  TYPE:
+    - clipart
+    - painting
+    - sketch
+MODEL:
+  ADAPTATION: petta
+  ARCH: resnet50
+  CKPT_PATH: "./ckpt/domainnet126/best_real_2020.pth"
+OPTIM:
+  BETA: 0.9
+  LR: 1e-3
+  METHOD: Adam
+  STEPS: 1
+  WD: 0.0
+TEST:
+  BATCH_SIZE: 64
+ROTTA:
+  MEMORY_SIZE: 64
+  UPDATE_FREQUENCY: 64
+PETTA:
+  ALPHA_0: 0.001
+  LAMBDA_0: 1.0
+  AL_WGT: 1.0
+  REGULARIZER: cosine
+  ADAPTIVE_LAMBDA: True
+  ADAPTIVE_ALPHA: True
+  NORM_LAYER: rbn
+  LOSS_FUNC: ce
+  PERCENTAGE: 1.0
+  NUM_WORKERS: 4
