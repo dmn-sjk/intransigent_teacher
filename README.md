@@ -1,5 +1,9 @@
 # Rethinking Teacher-Student Framework for Test-Time Adaptation
-This code is based on an open source online test-time adaptation repository [(link)](https://github.com/mariodoebler/test-time-adaptation). 
+
+[![Paper](https://img.shields.io/badge/Paper-arXiv:2609.02507-red)](https://arxiv.org/abs/2609.02507)
+[![Conference](https://img.shields.io/badge/Conference-CoLLAs%202026-blue)](TODO)
+
+> **Authors:** Damian Sójka, Marc Masana, Bartłomiej Twardowski, Sebastian Cygert
 
 ## Prerequisites
 To use this code, conda environment is provided:
@@ -55,5 +59,19 @@ Alternatively, you can run multiple experiment by modifying and running `run.py`
 To run the different continual DomainNet-126 sequences, you have to pass the `MODEL.CKPT_PATH` argument. When not specifying a `CKPT_PATH`, the sequence using the *real* domain as the source domain will be used.
 The checkpoints are provided by [AdaContrast](https://github.com/DianCh/AdaContrast) and can be downloaded [here](https://drive.google.com/drive/folders/1OOSzrl6kzxIlEhNAK168dPXJcHwJ1A2X). Structurally, it is best to download them into the directory `./ckpt/domainnet126`.
 
-### Reproduce results from Table 3
-To reproduce results from Table 3, run `run_tab3_bs10.py` script for BS=10 or `run_tab3_bs64.py` script for BS=64.
+### Reproduce results from Table 2
+To reproduce results from Table 2, run `run_tab3_bs10.py` script for BS=10 or `run_tab3_bs64.py` script for BS=64.
+
+## 📄 Citation
+```bibtex
+@inproceedings{sojka2026rethinking,
+  title         = {Rethinking Teacher-Student Framework for Test-Time Adaptation},
+  author        = {S{\'o}jka, Damian and Masana, Marc and Twardowski, Bart{\l}omiej and Cygert, Sebastian},
+  booktitle     = {Conference on Lifelong Learning Agents ({CoLLAs})},
+  year          = {2026},
+}
+```
+
+## Acknowledgment
+
+This code is based on an open source online test-time adaptation repository [(link) 🔗](https://github.com/mariodoebler/test-time-adaptation). 
