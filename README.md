@@ -4,35 +4,35 @@
 [![Conference](https://img.shields.io/badge/Conference-CoLLAs%202026-blue)](TODO)
 
 > **Authors:** Damian Sójka, Marc Masana, Bartłomiej Twardowski, Sebastian Cygert
-
-## Prerequisites
-To use this code, conda environment is provided:
+## 🛠️ Prerequisites
+To use this code, a conda environment is provided:
 ```bash
 conda update conda
 conda env create -f environment.yml
-conda activate tta 
+conda activate tta
 ```
 
-### Get Started
+## 📥 Get Started
 To run one of the following benchmarks, the corresponding datasets need to be downloaded.
 - *CIFAR10-to-CIFAR10-C*: the data is automatically downloaded.
-- *ImageNet-to-ImageNet-C*: for non source-free methods, download [ImageNet](https://www.image-net.org/download.php) and [ImageNet-C](https://zenodo.org/record/2235448#.Yj2RO_co_mF).
-- *ImageNet-to-ImageNet-R*: for non source-free methods, download [ImageNet](https://www.image-net.org/download.php) and [ImageNet-R](https://github.com/hendrycks/imagenet-r).
-- *DomainNet-126*: download the 6 splits of the [cleaned version](http://ai.bu.edu/M3SDA/). Following [MME](https://arxiv.org/abs/1904.06487), DomainNet-126 only uses a subset that contains 126 classes from 4 domains.
-- *ImageNet-to-CCC*: for non source-free methods, download [ImageNet](https://www.image-net.org/download.php). CCC is integrated as a webdataset and does not need to be downloaded! Please note that it cannot be combined with settings such as correlated.
+- *ImageNet-to-ImageNet-C*: for non source-free methods, download [ImageNet 🔗](https://www.image-net.org/download.php) and [ImageNet-C 🔗](https://zenodo.org/record/2235448#.Yj2RO_co_mF).
+- *ImageNet-to-ImageNet-R*: for non source-free methods, download [ImageNet 🔗](https://www.image-net.org/download.php) and [ImageNet-R 🔗](https://github.com/hendrycks/imagenet-r).
+- *DomainNet-126*: download the 6 splits of the [cleaned version 🔗](http://ai.bu.edu/M3SDA/). Following [MME 🔗](https://arxiv.org/abs/1904.06487), DomainNet-126 only uses a subset that contains 126 classes from 4 domains.
+- *ImageNet-to-CCC*: for non source-free methods, download [ImageNet 🔗](https://www.image-net.org/download.php). CCC is integrated as a webdataset and does not need to be downloaded! Please note that it cannot be combined with settings such as correlated.
 
 If you are going to use the `test_time.py` script directly to run experiments, specify the root folder for all datasets `_C.DATA_DIR = "./data"` in the file `conf.py`. For the individual datasets, the directory names are specified in `conf.py` as a dictionary (see function `complete_data_dir_path`). In case your directory names deviate from the ones specified in the mapping dictionary, you can simply modify them.
 
-You can also utilize `run*.py` scripts which allow to run multiple experiments at once. You can adjust the experiment parameters in the scripts directly in the /*TO MODIFY*/ section. The root folder for all datasets can be specified using `DATADIR` variable.
+You can also utilize `run*.py` scripts which allow you to run multiple experiments at once. You can adjust the experiment parameters in the scripts directly in the `/*TO MODIFY*/` section. The root folder for all datasets can be specified using the `DATADIR` variable.
 
-### PETAL Pretraining
-PETAL method requires additional pretraining on source data. Run `petal_train_swag.py` script for further training on source domain training data, with optional `DATA_DIR` param: 
+## 🧪 PETAL Pretraining
+PETAL method requires additional pretraining on source data. Run `petal_train_swag.py` script for further training on source domain training data, with optional `DATA_DIR` param:
+
 ```bash
-python petal_train_swag.py --cfg cfgs/[dataset_name]/petal.yaml DATA_DIR [dataset_root_folder] 
+python petal_train_swag.py --cfg cfgs/[dataset_name]/petal.yaml DATA_DIR [dataset_root_folder]
 ```
-This will create the files `[model_name]_cov.pt` and `[model_name]_swa.pt` inside the directory `ckpt/petal/[dataset_name]/`. 
+This will create the files `[model_name]_cov.pt` and `[model_name]_swa.pt` inside the directory `ckpt/petal/[dataset_name]/`.
 
-### Run Experiments
+## ▶️ Run Experiments
 
 Config files for all experiments and methods are provided. To conduct a single experiment, simply run the following Python file with the corresponding config file.
 ```bash
@@ -54,12 +54,12 @@ E.g., to run SAR for the ImageNet-to-ImageNet-R benchmark, run the following com
 python test_time.py --cfg cfgs/imagenet_others/sar.yaml CORRUPTION.DATASET imagenet_r
 ```
 
-Alternatively, you can run multiple experiment by modifying and running `run.py`script.
+Alternatively, you can run multiple experiments by modifying and running the `run.py` script.
 
 To run the different continual DomainNet-126 sequences, you have to pass the `MODEL.CKPT_PATH` argument. When not specifying a `CKPT_PATH`, the sequence using the *real* domain as the source domain will be used.
-The checkpoints are provided by [AdaContrast](https://github.com/DianCh/AdaContrast) and can be downloaded [here](https://drive.google.com/drive/folders/1OOSzrl6kzxIlEhNAK168dPXJcHwJ1A2X). Structurally, it is best to download them into the directory `./ckpt/domainnet126`.
+The checkpoints are provided by [AdaContrast 🔗](https://github.com/DianCh/AdaContrast) and can be downloaded [here 🔗](https://drive.google.com/drive/folders/1OOSzrl6kzxIlEhNAK168dPXJcHwJ1A2X). Structurally, it is best to download them into the directory `./ckpt/domainnet126`.
 
-### Reproduce results from Table 2
+## 📊 Reproduce results from Table 2
 To reproduce results from Table 2, run `run_tab3_bs10.py` script for BS=10 or `run_tab3_bs64.py` script for BS=64.
 
 ## 📄 Citation
@@ -72,6 +72,6 @@ To reproduce results from Table 2, run `run_tab3_bs10.py` script for BS=10 or `r
 }
 ```
 
-## Acknowledgment
+## 🙏 Acknowledgment
 
-This code is based on an open source online test-time adaptation repository [(link) 🔗](https://github.com/mariodoebler/test-time-adaptation). 
+This code is based the [test-time adaptation repository 🔗](https://github.com/mariodoebler/test-time-adaptation).
